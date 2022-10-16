@@ -44,3 +44,35 @@ Sun 16 Oct 2022 10:19:13 PM UTC:
  tests:  2|2
 total_score: 20/70
 875e625
+Sun 16 Oct 2022 10:46:57 PM UTC: 
+ heap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:4:
+heap.c: In function ‘heap_push’:
+heap.c:30:50: error: passing argument 1 of ‘realloc’ makes pointer from integer without a cast [-Werror=int-conversion]
+   30 |     pq->heapArray = (heapElem *)realloc(pq->capac*sizeof(heapElem));
+      |                                         ~~~~~~~~~^~~~~~~~~~~~~~~~~
+      |                                                  |
+      |                                                  long unsigned int
+In file included from test.c:2:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdlib.h:550:29: note: expected ‘void *’ but argument is of type ‘long unsigned int’
+  550 | extern void *realloc (void *__ptr, size_t __size)
+      |                       ~~~~~~^~~~~
+In file included from test.c:4:
+heap.c:30:33: error: too few arguments to function ‘realloc’
+   30 |     pq->heapArray = (heapElem *)realloc(pq->capac*sizeof(heapElem));
+      |                                 ^~~~~~~
+In file included from test.c:2:
+/nix/store/iwd8ic5hhwdxn5dga0im55g5hjl270cd-glibc-2.33-47-dev/include/stdlib.h:550:14: note: declared here
+  550 | extern void *realloc (void *__ptr, size_t __size)
+      |              ^~~~~~~
+In file included from test.c:4:
+heap.c:37:20: error: expected ‘;’ before ‘}’ token
+   37 |     now = (now-1)/2
+      |                    ^
+      |                    ;
+   38 |   }
+      |   ~                 
+cc1: all warnings being treated as errors
+Compilation failed
+a4e5faa
