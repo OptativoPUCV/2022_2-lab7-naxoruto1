@@ -2,3 +2,20 @@ Sun 16 Oct 2022 10:12:05 PM UTC:
  tests:  0|4
 total_score: 0/70
 e567bcf
+Sun 16 Oct 2022 10:16:36 PM UTC: 
+ heap.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:37:62: error: expected ‘;’ before ‘newHeap’
+   37 |   newHeap->heapArray = (heapElem *)malloc(3*sizeof(heapElem))
+      |                                                              ^
+      |                                                              ;
+   38 |   newHeap->size = 0;
+      |   ~~~~~~~                                                     
+heap.c:39:12: error: ‘Heap’ {aka ‘struct Heap’} has no member named ‘capacity’; did you mean ‘capac’?
+   39 |   newHeap->capacity = 3;
+      |            ^~~~~~~~
+      |            capac
+Compilation failed
+e7cf773
