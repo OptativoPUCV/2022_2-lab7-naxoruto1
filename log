@@ -32,3 +32,9 @@ heap.c:37:62: error: expected ‘;’ before ‘newHeap’
       |   ~~~~~~~                                                     
 Compilation failed
 a5a1ab1
+Sun 16 Oct 2022 10:16:55 PM UTC: 
+ heap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|3
+total_score: 10/70
+f774d7c
