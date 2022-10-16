@@ -44,6 +44,21 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
+  pq->size--;
+  pq->heapArray[0] = pq->heapArray[pq->size];
+
+  int priority = pq->heapArray[0].priority;
+  int now = 1;
+
+  while((now <= pq->size && pq->heapArray[now].priority>priority) || (pq->heapArray[now+1].priority>priority)){
+    heapElem * temporal = pq->heapArray[(now-1)/2]
+    if (pq->heapArray[now+1].priority>priority){
+      now++;
+    }
+    pq->heapArray[(now-1)/2] = pq->heapArray[now];
+    pq->heapArray[now] = temporal;
+    now = (now*2)+1;    
+  }
 
 }
 
